@@ -7,15 +7,23 @@ body{
     background-color: teal;
     display: flex;
     justify-content: center;
+    overflow: hidden;
     align-items: center;
     height:100vh;
+    width:100vw;
+    position: relative;
     display: flex;
     flex-direction: column;
 }
 
+.wrapper{
+    height:100vh;
+}
 canvas{
+    height: 700px;
+    width:880px;
     margin: 0;
-    margin-top: 60px;
+    margin-top: 90px;
 }
 .buttons{
     display: flex;
@@ -66,6 +74,7 @@ i:hover{
 
 
 .rulesBtn{
+    z-index: 99;
     color: white;
     position: fixed;
     top:40px;
