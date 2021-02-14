@@ -67,7 +67,7 @@ class rectangle
 
 class circle
 {
-    constructor(x,y,radius,dx,dy,speed=2)
+    constructor(x,y,radius,dx,dy,speed=4)
     {
         this.x=x;
         this.y=y;
@@ -149,7 +149,7 @@ function init()//starter
             bricks[i][j]=new rectangle(60+(1+j)*10+j*70,60+(1+i)*10+i*20,70,20);
     }
     rectangle.displayAllBricks();
-    bar=new rectangle(canvas.width/2-80/2,canvas.height-40,80,8,"bar");
+    bar=new rectangle(canvas.width/2-80/2,canvas.height-40,480,8,"bar");
     ball=new circle(canvas.width/2,canvas.height-48,8,0,0);
     score=new text('Score',0,750,40);
     lives=new text('Lives',2,600,40);
