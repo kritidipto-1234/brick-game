@@ -67,7 +67,7 @@ class rectangle
 
 class circle
 {
-    constructor(x,y,radius,dx,dy,speed=3)
+    constructor(x,y,radius,dx,dy,speed=1)
     {
         this.x=x;
         this.y=y;
