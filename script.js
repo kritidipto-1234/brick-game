@@ -155,7 +155,7 @@ function init()//starter
             bricks[i][j]=new rectangle(60+(1+j)*10+j*70,60+(1+i)*10+i*20,70,20);
     }
     rectangle.displayAllBricks();
-    bar=new rectangle(canvas.width/2-90/2,canvas.height-40,90,8,"bar");
+    bar=new rectangle(canvas.width/2-84/2,canvas.height-40,84,8,"bar");
     ball=new circle(canvas.width/2,canvas.height-48,7,0,0);
     score=new text('Score',0,750,40);
     lives=new text('Lives',2,600,40);
