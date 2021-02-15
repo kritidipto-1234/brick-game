@@ -5,7 +5,7 @@ const rightBtn=document.querySelector('.right');
 const buttonTray=document.querySelector('.buttons');
 const message=document.querySelector('.message');
 ///////////////////////////////////////////////////////////////////////////////////
-let ctx,bricks,bar,ball,lives,score,gameStarted,frameRenderer;
+let ctx,bricks,bar,ball,lives,score,gameStarted,frameRenderer,row=7,column=9;
 ///////////////////////////////////////////////////////////////////////////////////
 
 class rectangle
@@ -39,9 +39,9 @@ class rectangle
     }
     static displayAllBricks()
     {
-        for(let i=0;i<5;i++)
+        for(let i=0;i<row;i++)
         {
-            for(let j=0;j<9;j++)
+            for(let j=0;j<column;j++)
                 if (bricks[i][j].display) bricks[i][j].displayRectangle();
         }
     }
@@ -51,7 +51,7 @@ class rectangle
         {
             b.display=false;
             if (b.type==="brick") score.value++;
-            if (score.value==45)
+            if (score.value==row*column)
             {
                 lives.value=1;
                 reset("CONGRATS U WON!");
@@ -61,6 +61,11 @@ class rectangle
                 ball.dx=-ball.dx;
             if (prev.y<b.y || prev.y>b.y+b.h)
                 ball.dy=-ball.dy;
+            
+            if (b.type==='bar')
+            {
+                ball.dx+=(b.dx/b.speed)*2;
+            }
         }
     }
 }
@@ -87,9 +92,9 @@ class circle
     }
     checkCollision()//check for collision of this ball with all other physical objects
     {
-        for(let i=0;i<5;i++)//for all the bricks
+        for(let i=0;i<row;i++)//for all the bricks
         {
-            for(let j=0;j<9;j++)
+            for(let j=0;j<column;j++)
                 rectangle.checkRectCircCollision(bricks[i][j],this);
         }
 
@@ -111,6 +116,7 @@ class circle
         if (direction==='right')
             this.dx=this.speed;
         this.dy=-this.speed;
+        this.dx+=Math.round(Math.random());
     }
 }
 
@@ -140,12 +146,12 @@ function init()//starter
     canvas.height=700;
     canvas.style.background='aqua';
     ctx.fillStyle='teal';
-    bricks=new Array(5);
-    for(let i=0;i<5;i++)
-        bricks[i]=new Array(9);
-    for(let i=0;i<5;i++)
+    bricks=new Array(6);
+    for(let i=0;i<row;i++)
+        bricks[i]=new Array(column);
+    for(let i=0;i<row;i++)
     {
-        for(let j=0;j<9;j++)
+        for(let j=0;j<column;j++)
             bricks[i][j]=new rectangle(60+(1+j)*10+j*70,60+(1+i)*10+i*20,70,20);
     }
     rectangle.displayAllBricks();
@@ -210,9 +216,9 @@ function reset(displayMessage)//resets canvas based on given conditions
         setTimeout(function(){message.style.opacity=0;},1500);
         lives.value=2;
         score.value=0;
-        for(let i=0;i<5;i++)
+        for(let i=0;i<row;i++)
         {
-            for(let j=0;j<9;j++)
+            for(let j=0;j<column;j++)
                 bricks[i][j].display=true;
         }
     }
@@ -229,3 +235,6 @@ function reset(displayMessage)//resets canvas based on given conditions
 
 //works for all keys
 //fix respawnt
+
+
+console.log();
