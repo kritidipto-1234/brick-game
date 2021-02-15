@@ -47,7 +47,7 @@ class rectangle
     }
     static checkRectCircCollision(b,ball)//check for collison of a rect and a circle
     {
-        if (b.x<=ball.x && ball.x<=b.x+b.w && b.y<=ball.y && ball.y<=b.y+b.h && b.display)
+        if (!((b.x+b.w<ball.x-ball.radius)||(b.x>ball.x+ball.radius)||(b.y+b.h<ball.y-ball.radius)||(ball.y+ball.radius<b.y)) && b.display)//actually here ball is treated as square
         {
             b.display=false;
             if (b.type==="brick") score.value++;
@@ -155,8 +155,8 @@ function init()//starter
             bricks[i][j]=new rectangle(60+(1+j)*10+j*70,60+(1+i)*10+i*20,70,20);
     }
     rectangle.displayAllBricks();
-    bar=new rectangle(canvas.width/2-85/2,canvas.height-40,85,8,"bar");
-    ball=new circle(canvas.width/2,canvas.height-48,8,0,0);
+    bar=new rectangle(canvas.width/2-90/2,canvas.height-40,90,8,"bar");
+    ball=new circle(canvas.width/2,canvas.height-48,7,0,0);
     score=new text('Score',0,750,40);
     lives=new text('Lives',2,600,40);
     frameRenderer=setInterval(updateCanvas,10);
