@@ -2,6 +2,7 @@ const body=document.querySelector('body');
 const wrapper=document.querySelector('.wrapper');
 const canvasElement=document.querySelector('canvas');
 const buttons=document.querySelector('.buttons');
+const messageText=document.querySelector('.message');
 
 window.addEventListener('load',function()
 {
@@ -13,5 +14,6 @@ window.addEventListener('load',function()
         //canvasElement.style.position='fixed';
         wrapper.style.position='relative';
         wrapper.style.top='-60px';
+        messageText.style.fontSize='60px';
     }
 })

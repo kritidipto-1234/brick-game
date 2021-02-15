@@ -54,7 +54,7 @@ class rectangle
             if (score.value==45)
             {
                 lives.value=1;
-                reset("CONGRATS YOU WON!");
+                reset("CONGRATS U WON!");
             }
             const prev={x:ball.x-ball.dx,y:ball.y-ball.dy};
             if (prev.x<b.x || prev.x> b.x+b.w)
