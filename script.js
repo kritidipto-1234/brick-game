@@ -57,11 +57,11 @@ class rectangle
                 reset("CONGRATS U WON!");
             }
             const prev={x:ball.x-ball.dx,y:ball.y-ball.dy};
-            if (prev.x<b.x || prev.x> b.x+b.w)
+            if (prev.x+ball.radius<b.x || prev.x-ball.radius> b.x+b.w)
                 ball.dx=-ball.dx;
-            if (prev.y<b.y || prev.y>b.y+b.h)
+            if (prev.y+ball.radius<b.y || prev.y-ball.radius>b.y+b.h)
                 ball.dy=-ball.dy;
-            
+
             if (b.type==='bar')
             {
                 ball.dx+=(b.dx/b.speed)*2;
@@ -236,5 +236,3 @@ function reset(displayMessage)//resets canvas based on given conditions
 //works for all keys
 //fix respawnt
 
-
-console.log();
