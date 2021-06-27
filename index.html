@@ -1,45 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brick Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- <link rel="stylesheet" media="screen and (max-width:700px)" href="mobile.css"> -->
     <script defer src="./script.js"></script>
     <script defer src="./rules.js"></script>
+    <meta property="og:image" content="./feature.png" />
     <script defer src="./resize.js"></script>
-    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="rulesBtn">
-        <i class="fas fa-bars"></i>
+      <i class="fas fa-bars"></i>
     </div>
     <div class="overlay"></div>
     <div class="ruleList">
-        <h1>RULES</h1>
-        <ul>
-            <li>Use your keyboard left and right arrows to control Bar</li>
-            <li>You can also use the on screen buttons</li>
-            <li>You have 2 lives</li>
-            <li>Directional controls also launches the ball</li>
-            <li>You cant control what speed ball launches at</li>
-            <li>But once ball is launched you can affect balls speed using the bar</li>
-            <li>If bar is not moving when ball hits ,then ball velocity remains unaffected</li>
-            <li>If bar moves in opposite direction while receiving ball ,then ball speed decreases</li>
-            <li>If bar moves in same direction while receiving ball ,then ball speed increases</li>
-            <li>If ball is moving slow enough, while receiving ball ,moving bar in opposite direction will change ball direction</li>
-        </ul>
+      <h1>RULES</h1>
+      <ul>
+        <li>Use your keyboard left and right arrows to control Bar</li>
+        <li>You can also use the on screen buttons</li>
+        <li>You have 2 lives</li>
+        <li>Directional controls also launches the ball</li>
+        <li>You cant control what speed ball launches at</li>
+        <li>
+          But once ball is launched you can affect balls speed using the bar
+        </li>
+        <li>
+          If bar is not moving when ball hits ,then ball velocity remains
+          unaffected
+        </li>
+        <li>
+          If bar moves in opposite direction while receiving ball ,then ball
+          speed decreases
+        </li>
+        <li>
+          If bar moves in same direction while receiving ball ,then ball speed
+          increases
+        </li>
+        <li>
+          If ball is moving slow enough, while receiving ball ,moving bar in
+          opposite direction will change ball direction
+        </li>
+      </ul>
     </div>
     <div class="message"></div>
     <div class="wrapper">
-        <canvas></canvas>
-        <div class="buttons">
-            <div class="left button" value="left"><i class="fas fa-chevron-left"></i></div>
-            <div class="right button" value="right"><i class="fas fa-chevron-right"></i></div>
+      <canvas></canvas>
+      <div class="buttons">
+        <div class="left button" value="left">
+          <i class="fas fa-chevron-left"></i>
         </div>
+        <div class="right button" value="right">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
     </div>
-</body>
-</html> 
-
-
+  </body>
+</html>
